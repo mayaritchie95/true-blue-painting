@@ -21,10 +21,13 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+html,body{overflow-x:hidden;max-width:100%}
 body{
   margin:0;font-family:var(--font-body);color:var(--ink);
   background:var(--paper);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;
 }
+/* Long words/URLs/emails never force horizontal scroll */
+p,li,a,span,h1,h2,h3,h4,figcaption,label,td,th{overflow-wrap:break-word}
 h1,h2,h3,h4{font-family:var(--font-head);color:var(--blue-deep);line-height:1.15;font-weight:600;margin:0 0 .5em}
 h1{font-size:clamp(2.1rem,5vw,3.4rem);letter-spacing:-.01em}
 h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
@@ -177,8 +180,9 @@ fieldset{border:none;margin:0;padding:0}
 /* ===== Contact strip ===== */
 .contact-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media (max-width:760px){.contact-strip{grid-template-columns:1fr}}
-.contact-strip a{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-decoration:none;color:var(--ink)}
+.contact-strip a,.contact-strip>div{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-decoration:none;color:var(--ink);min-width:0}
 .contact-strip a:hover{border-color:var(--blue)}
+.contact-strip a>span:last-child,.contact-strip>div>span:last-child{min-width:0;overflow-wrap:anywhere}
 .contact-strip .ci{flex:0 0 auto;min-width:62px;padding:8px 12px;border-radius:8px;background:var(--blue-deep);color:#fff;font-weight:600;font-size:.82rem;letter-spacing:.02em;display:flex;align-items:center;justify-content:center}
 .contact-strip b{display:block;color:var(--blue-deep)}
 
@@ -207,6 +211,7 @@ fieldset{border:none;margin:0;padding:0}
 .pill{display:inline-block;background:#dcebf6;color:var(--blue-deep);font-weight:600;font-size:.85rem;padding:5px 13px;border-radius:999px;margin-bottom:16px}
 .divider{height:1px;background:var(--border);margin:0}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.two-col>*{min-width:0}
 @media (max-width:860px){.two-col{grid-template-columns:1fr;gap:28px}}
 .checklist{list-style:none;padding:0;margin:0}
 .checklist li{padding-left:28px;position:relative;margin-bottom:12px}
