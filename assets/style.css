@@ -2,7 +2,7 @@
 :root{
   --blue-deep:#133971;   /* logo "PAINTING" navy */
   --blue:#2c91cb;        /* logo mid blue (accents, borders) */
-  --blue-btn:#217bb0;    /* darker logo blue for buttons: AA 4.6:1 on white */
+  --blue-btn:#5e8bd5;    /* button colour (requested swatch) */
   --blue-dark:#20497c;   /* logo deep blue */
   --sky:#5cb2d7;         /* logo bright highlight */
   --paper:#eff4f7;       /* logo pale blue-white */
@@ -183,7 +183,6 @@ fieldset{border:none;margin:0;padding:0}
 .contact-strip a,.contact-strip>div{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-decoration:none;color:var(--ink);min-width:0}
 .contact-strip a:hover{border-color:var(--blue)}
 .contact-strip a>span:last-child,.contact-strip>div>span:last-child{min-width:0;overflow-wrap:anywhere}
-.contact-strip .ci{flex:0 0 auto;min-width:62px;padding:8px 12px;border-radius:8px;background:var(--blue-deep);color:#fff;font-weight:600;font-size:.82rem;letter-spacing:.02em;display:flex;align-items:center;justify-content:center}
 .contact-strip b{display:block;color:var(--blue-deep)}
 
 /* ===== Footer ===== */
