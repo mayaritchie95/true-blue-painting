@@ -1,14 +1,15 @@
 /* ===== True Blue Painting & Cabinet Refinishing — shared styles ===== */
 :root{
-  --blue-deep:#12304f;
-  --blue:#1f6fb2;
-  --blue-dark:#17547f;
-  --paper:#f6f5f2;
+  --blue-deep:#133971;   /* logo "PAINTING" navy */
+  --blue:#2c91cb;        /* logo mid blue (actions) */
+  --blue-dark:#20497c;   /* logo deep blue */
+  --sky:#5cb2d7;         /* logo bright highlight */
+  --paper:#eff4f7;       /* logo pale blue-white */
   --white:#ffffff;
-  --ink:#20242a;
-  --ink-soft:#4a525c;
-  --border:#e3e8ee;
-  --wood:#c8a97e;
+  --ink:#1c2430;
+  --ink-soft:#4a556a;
+  --border:#d8e3ee;
+  --wood:#5cb2d7;        /* accent now logo sky blue */
   --ok:#1f7a4d;
   --maxw:1140px;
   --radius:10px;
@@ -43,7 +44,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 
 /* ===== Header ===== */
-.site-header{position:sticky;top:0;z-index:100;background:rgba(246,245,242,.95);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--border)}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(239,244,247,.95);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:var(--maxw);margin:0 auto}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--blue-deep);font-family:var(--font-head);font-weight:600;font-size:1.15rem;line-height:1.1}
 .brand .logo{height:46px;width:auto;flex:0 0 auto}
@@ -51,8 +52,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .brand .brand-text{display:none}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
 .nav-links a{text-decoration:none;color:var(--ink);padding:9px 12px;border-radius:7px;font-weight:500;font-size:.98rem}
-.nav-links a:hover{background:#eceef1;color:var(--blue-deep)}
-.nav-links a[aria-current="page"]{color:var(--blue-deep);background:#e7edf2}
+.nav-links a:hover{background:#e2edf5;color:var(--blue-deep)}
+.nav-links a[aria-current="page"]{color:var(--blue-deep);background:#dcebf6}
 .nav-cta{background:var(--blue);color:#fff!important;padding:10px 16px!important;border-radius:8px;font-weight:600!important}
 .nav-cta:hover{background:var(--blue-dark)}
 .nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:8px;padding:8px 10px;cursor:pointer}
@@ -84,7 +85,7 @@ section{padding:72px 0}
 .eyebrow{color:var(--blue);font-weight:700;font-size:.95rem;letter-spacing:.02em;margin:0 0 .4rem}
 
 /* ===== Hero ===== */
-.hero{background:linear-gradient(170deg,#eef2f6 0%,var(--paper) 60%);padding:56px 0 64px;border-bottom:1px solid var(--border)}
+.hero{background:linear-gradient(170deg,#ddeaf4 0%,var(--paper) 60%);padding:56px 0 64px;border-bottom:1px solid var(--border)}
 .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
 .hero h1{margin-bottom:.35em}
 .hero .lead{margin-bottom:1.6rem}
@@ -114,7 +115,7 @@ section{padding:72px 0}
 @media (max-width:560px){.cols-2,.cols-3,.cols-4{grid-template-columns:1fr}}
 .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px}
 .card h3{margin-top:0}
-.card-icon{width:46px;height:46px;border-radius:10px;background:#e7edf2;display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--blue-deep)}
+.card-icon{width:46px;height:46px;border-radius:10px;background:#dcebf6;display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--blue-deep)}
 
 /* ===== Steps (real sequence => numbering OK) ===== */
 .steps{counter-reset:step;display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
@@ -169,7 +170,7 @@ fieldset{border:none;margin:0;padding:0}
 @media (max-width:760px){.contact-strip{grid-template-columns:1fr}}
 .contact-strip a{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-decoration:none;color:var(--ink)}
 .contact-strip a:hover{border-color:var(--blue)}
-.contact-strip .ci{width:44px;height:44px;flex:0 0 auto;border-radius:10px;background:#e7edf2;color:var(--blue-deep);display:flex;align-items:center;justify-content:center}
+.contact-strip .ci{width:44px;height:44px;flex:0 0 auto;border-radius:10px;background:#dcebf6;color:var(--blue-deep);display:flex;align-items:center;justify-content:center}
 .contact-strip b{display:block;color:var(--blue-deep)}
 
 /* ===== Footer ===== */
@@ -194,7 +195,7 @@ fieldset{border:none;margin:0;padding:0}
 .legal li{margin-bottom:.5em}
 
 /* ===== Misc ===== */
-.pill{display:inline-block;background:#e7edf2;color:var(--blue-deep);font-weight:600;font-size:.85rem;padding:5px 13px;border-radius:999px;margin-bottom:16px}
+.pill{display:inline-block;background:#dcebf6;color:var(--blue-deep);font-weight:600;font-size:.85rem;padding:5px 13px;border-radius:999px;margin-bottom:16px}
 .divider{height:1px;background:var(--border);margin:0}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 @media (max-width:860px){.two-col{grid-template-columns:1fr;gap:28px}}
