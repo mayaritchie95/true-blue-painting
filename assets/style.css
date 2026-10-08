@@ -1,7 +1,8 @@
 /* ===== True Blue Painting & Cabinet Refinishing — shared styles ===== */
 :root{
   --blue-deep:#133971;   /* logo "PAINTING" navy */
-  --blue:#2c91cb;        /* logo mid blue (actions) */
+  --blue:#2c91cb;        /* logo mid blue (accents, borders) */
+  --blue-btn:#217bb0;    /* darker logo blue for buttons: AA 4.6:1 on white */
   --blue-dark:#20497c;   /* logo deep blue */
   --sky:#5cb2d7;         /* logo bright highlight */
   --paper:#eff4f7;       /* logo pale blue-white */
@@ -40,7 +41,12 @@ img{max-width:100%;height:auto;display:block}
 
 /* Focus visibility */
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{
-  outline:3px solid var(--blue);outline-offset:2px;border-radius:4px
+  outline:3px solid var(--blue-deep);outline-offset:2px;border-radius:4px;
+  box-shadow:0 0 0 5px rgba(92,178,215,.45)
+}
+/* On dark bands, use a light focus ring so it stays visible */
+.band a:focus-visible,.band button:focus-visible,.site-footer a:focus-visible{
+  outline-color:#fff;box-shadow:0 0 0 5px rgba(92,178,215,.6)
 }
 
 /* ===== Header ===== */
@@ -53,8 +59,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
 .nav-links a{text-decoration:none;color:var(--ink);padding:9px 12px;border-radius:7px;font-weight:500;font-size:.98rem}
 .nav-links a:hover{background:#e2edf5;color:var(--blue-deep)}
-.nav-links a[aria-current="page"]{color:var(--blue-deep);background:#dcebf6}
-.nav-cta{background:var(--blue);color:#fff!important;padding:10px 16px!important;border-radius:8px;font-weight:600!important}
+.nav-links a[aria-current="page"]:not(.nav-cta){color:var(--blue-deep);background:#dcebf6}
+.nav-cta[aria-current="page"]{color:#fff!important;background:var(--blue-dark)!important}
+.nav-cta{background:var(--blue-btn);color:#fff!important;padding:10px 16px!important;border-radius:8px;font-weight:600!important}
 .nav-cta:hover{background:var(--blue-dark)}
 .nav-toggle{display:none;background:none;border:1px solid var(--border);border-radius:8px;padding:8px 10px;cursor:pointer}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--blue-deep);margin:4px 0}
@@ -67,7 +74,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 
 /* ===== Buttons ===== */
-.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:9px;border:none;cursor:pointer;font-size:1rem;transition:background .15s,transform .05s}
+.btn{display:inline-block;background:var(--blue-btn);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:9px;border:none;cursor:pointer;font-size:1rem;transition:background .15s,transform .05s}
 .btn:hover{background:var(--blue-dark)}
 .btn:active{transform:translateY(1px)}
 .btn-lg{padding:16px 32px;font-size:1.08rem}
@@ -82,7 +89,7 @@ section{padding:72px 0}
 .lead{font-size:1.2rem;color:var(--ink-soft);max-width:60ch}
 .center{text-align:center}
 .center p{margin-left:auto;margin-right:auto}
-.eyebrow{color:var(--blue);font-weight:700;font-size:.95rem;letter-spacing:.02em;margin:0 0 .4rem}
+.eyebrow{color:var(--blue-dark);font-weight:700;font-size:.95rem;letter-spacing:.02em;margin:0 0 .4rem}
 
 /* ===== Hero ===== */
 .hero{background:linear-gradient(170deg,#ddeaf4 0%,var(--paper) 60%);padding:56px 0 64px;border-bottom:1px solid var(--border)}
@@ -90,9 +97,9 @@ section{padding:72px 0}
 .hero h1{margin-bottom:.35em}
 .hero .lead{margin-bottom:1.6rem}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:1.4rem}
-.hero-trust{display:flex;flex-wrap:wrap;gap:18px;color:var(--ink-soft);font-size:.95rem;font-weight:500}
-.hero-trust span{display:flex;align-items:center;gap:7px}
-.hero-trust svg{flex:0 0 auto;color:var(--ok)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--blue-deep);font-size:.96rem;font-weight:600}
+.hero-trust span{display:flex;align-items:center;gap:10px}
+.hero-trust span:not(:last-child)::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--sky);margin-left:12px}
 @media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:32px}}
 
 /* ===== Before/After slider ===== */
@@ -113,9 +120,8 @@ section{padding:72px 0}
 .cols-4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:860px){.cols-3,.cols-4{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.cols-2,.cols-3,.cols-4{grid-template-columns:1fr}}
-.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;border-top:4px solid var(--blue)}
 .card h3{margin-top:0}
-.card-icon{width:46px;height:46px;border-radius:10px;background:#dcebf6;display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--blue-deep)}
 
 /* ===== Steps (real sequence => numbering OK) ===== */
 .steps{counter-reset:step;display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
@@ -130,6 +136,9 @@ section{padding:72px 0}
 .band{background:var(--blue-deep);color:#eaf1f8}
 .band h2,.band h3{color:#fff}
 .band p{color:#cdddec}
+/* Step cards sit on the band but have white backgrounds — keep their text dark */
+.band .step h3{color:var(--blue-deep)}
+.band .step p{color:var(--ink-soft)}
 .band-wood{background:linear-gradient(120deg,var(--blue-deep),var(--blue-dark))}
 
 /* ===== Gallery ===== */
@@ -141,7 +150,7 @@ section{padding:72px 0}
 
 /* ===== Reviews ===== */
 .review{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px}
-.review .stars{color:#e0a106;letter-spacing:2px;margin-bottom:10px}
+.review .stars{color:#a06c00;letter-spacing:2px;margin-bottom:10px}
 .review p{font-style:italic;color:var(--ink)}
 .review cite{display:block;margin-top:12px;font-style:normal;font-weight:600;color:var(--blue-deep)}
 
@@ -170,7 +179,7 @@ fieldset{border:none;margin:0;padding:0}
 @media (max-width:760px){.contact-strip{grid-template-columns:1fr}}
 .contact-strip a{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-decoration:none;color:var(--ink)}
 .contact-strip a:hover{border-color:var(--blue)}
-.contact-strip .ci{width:44px;height:44px;flex:0 0 auto;border-radius:10px;background:#dcebf6;color:var(--blue-deep);display:flex;align-items:center;justify-content:center}
+.contact-strip .ci{flex:0 0 auto;min-width:62px;padding:8px 12px;border-radius:8px;background:var(--blue-deep);color:#fff;font-weight:600;font-size:.82rem;letter-spacing:.02em;display:flex;align-items:center;justify-content:center}
 .contact-strip b{display:block;color:var(--blue-deep)}
 
 /* ===== Footer ===== */
@@ -200,7 +209,7 @@ fieldset{border:none;margin:0;padding:0}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 @media (max-width:860px){.two-col{grid-template-columns:1fr;gap:28px}}
 .checklist{list-style:none;padding:0;margin:0}
-.checklist li{padding-left:32px;position:relative;margin-bottom:12px}
-.checklist li::before{content:"";position:absolute;left:0;top:3px;width:20px;height:20px;border-radius:50%;background:var(--ok);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+.checklist li{padding-left:28px;position:relative;margin-bottom:12px}
+.checklist li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:2px;background:var(--blue)}
 .breadcrumb{font-size:.88rem;color:var(--ink-soft);padding:16px 0 0}
 .breadcrumb a{color:var(--ink-soft)}

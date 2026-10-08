@@ -7,7 +7,9 @@
 <meta name="description" content="Request a free, no-obligation cabinet painting estimate from True Blue Painting. Tell us about your kitchen or bathroom project and we'll get back to you with a clear quote.">
 <link rel="canonical" href="https://truebluepainting.com/quote.html">
 <meta name="robots" content="index,follow">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
@@ -28,7 +30,7 @@
     </ul>
   </nav>
 </header>
-<main id="main">
+<main id="main" tabindex="-1">
 <div class="wrap breadcrumb"><a href="index.html">Home</a> › Request a Quote</div>
 
 <section class="section-tight">
@@ -39,9 +41,9 @@
       <p class="lead">Fill in the form and we'll get back to you with a free, no-obligation estimate. Prefer to talk? Call or email us directly — we're happy to help.</p>
 
       <div class="contact-strip" style="grid-template-columns:1fr;margin-top:24px">
-        <a href="tel:+16044403020"><span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8.1 9.5a16 16 0 006 6l1.1-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></span><span><b>Call us</b>604-440-3020</span></a>
-        <a href="mailto:okko.trueblueptg@gmail.com"><span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><span><b>Email us</b>okko.trueblueptg@gmail.com</span></a>
-        <div style="display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px"><span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><b>Visit / mail</b>3079 Lonsdale Ave, North Vancouver, BC</span></div>
+        <a href="tel:+16044403020"><span class="ci" aria-hidden="true">Call</span><span><b>Call us</b>604-440-3020</span></a>
+        <a href="mailto:okko.trueblueptg@gmail.com"><span class="ci" aria-hidden="true">Email</span><span><b>Email us</b>okko.trueblueptg@gmail.com</span></a>
+        <div style="display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px"><span class="ci" aria-hidden="true">Visit</span><span><b>Visit / mail</b>3079 Lonsdale Ave, North Vancouver, BC</span></div>
       </div>
     </div>
 
@@ -49,24 +51,25 @@
       <form class="form" id="quote-form" novalidate>
         <h2 style="margin-top:0;font-size:1.4rem">Request a free estimate</h2>
         <p role="status" id="form-status" tabindex="-1" hidden style="background:#e7f3ec;border:1px solid #bfe0cd;color:#13532f;padding:12px 14px;border-radius:8px"></p>
+        <p style="font-size:.88rem;color:var(--ink-soft);margin-top:-6px">Fields marked <span class="req" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
 
         <div class="field">
           <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
-          <input type="text" id="name" name="name" autocomplete="name" required>
+          <input type="text" id="name" aria-required="true" name="name" autocomplete="name" required>
         </div>
         <fieldset>
           <div class="field">
             <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
+            <input type="email" id="email" aria-required="true" name="email" autocomplete="email" required>
           </div>
           <div class="field">
             <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            <input type="tel" id="phone" aria-required="true" name="phone" autocomplete="tel" required>
           </div>
         </fieldset>
         <div class="field">
           <label for="address">Property address / service area <span class="req" aria-hidden="true">*</span></label>
-          <input type="text" id="address" name="address" autocomplete="street-address" required>
+          <input type="text" id="address" aria-required="true" name="address" autocomplete="street-address" required>
           <span class="hint">Street address or at least your city, so we know where the work is.</span>
         </div>
         <div class="field">
@@ -80,7 +83,7 @@
         </div>
         <div class="field">
           <label for="details">Tell us about your project <span class="req" aria-hidden="true">*</span></label>
-          <textarea id="details" name="details" required placeholder="e.g. Approx. 20 kitchen doors and drawers, currently oak, we'd like a soft white. Hoping to complete before the holidays."></textarea>
+          <textarea id="details" aria-required="true" name="details" required placeholder="e.g. Approx. 20 kitchen doors and drawers, currently oak, we'd like a soft white. Hoping to complete before the holidays."></textarea>
           <span class="hint">Colour ideas, approximate number of doors, and your timeline all help us quote accurately.</span>
         </div>
         <button class="btn btn-lg" type="submit" style="width:100%">Send my request</button>
