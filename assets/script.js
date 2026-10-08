@@ -59,3 +59,24 @@
     window.location.href=mail;
   });
 })();
+
+// Prefill the "service area" field from a ?area= link on the Service Areas page
+(function(){
+  var form=document.getElementById('quote-form');
+  if(!form)return;
+  var params=new URLSearchParams(window.location.search);
+  var area=params.get('area');
+  if(!area)return;
+  var field=document.getElementById('address');
+  if(!field)return;
+  // Trim and cap length as a light safeguard
+  field.value=area.replace(/\s+/g,' ').trim().slice(0,80);
+  // Let the visitor know it was filled from their choice, and move focus to the first empty field
+  var note=document.getElementById('area-note');
+  if(note){note.hidden=false;}
+  var firstEmpty=form.querySelector('#name');
+  if(firstEmpty && !firstEmpty.value){
+    // focus the name field without yanking the page to the form on load
+    firstEmpty.focus({preventScroll:true});
+  }
+})();
