@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<rect width="800" height="600" fill="#cdbfa6"/>
+<rect x="60" y="340" width="680" height="200" rx="6" fill="#9c7f54"/>
+<rect x="60" y="340" width="330" height="200" rx="6" fill="#9c7f54" stroke="#6f5529" stroke-width="3"/>
+<rect x="410" y="340" width="330" height="200" rx="6" fill="#9c7f54" stroke="#6f5529" stroke-width="3"/>
+<circle cx="370" cy="440" r="7" fill="#6f5529"/>
+<circle cx="430" cy="440" r="7" fill="#6f5529"/>
+<rect x="60" y="120" width="680" height="150" rx="6" fill="#9c7f54" stroke="#6f5529" stroke-width="3"/>
+<rect x="320" y="150" width="160" height="90" rx="4" fill="#cdbfa6"/>
+<text x="400" y="80" font-family="Georgia,serif" font-size="34" fill="#6f5529" text-anchor="middle">BEFORE — Dark Vanity</text>
+</svg>

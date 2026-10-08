@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://truebluepainting.com/sitemap.xml

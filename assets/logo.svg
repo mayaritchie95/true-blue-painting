@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="True Blue Painting logo">
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="#12304f"/>
+  <rect x="12" y="14" width="40" height="22" rx="3" fill="none" stroke="#f6f5f2" stroke-width="2.4"/>
+  <line x1="32" y1="14" x2="32" y2="36" stroke="#f6f5f2" stroke-width="2.4"/>
+  <circle cx="27" cy="25" r="1.8" fill="#c8a97e"/>
+  <circle cx="37" cy="25" r="1.8" fill="#c8a97e"/>
+  <path d="M20 44c3-2 6-2 9 0M35 44c3-2 6-2 9 0" fill="none" stroke="#1f6fb2" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M26 50h12" stroke="#c8a97e" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

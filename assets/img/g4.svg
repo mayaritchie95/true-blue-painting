@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<rect width="800" height="600" fill="#f1efe9"/>
+<rect x="60" y="340" width="680" height="200" rx="6" fill="#dfe6ee"/>
+<rect x="60" y="340" width="330" height="200" rx="6" fill="#dfe6ee" stroke="#b9c6d4" stroke-width="3"/>
+<rect x="410" y="340" width="330" height="200" rx="6" fill="#dfe6ee" stroke="#b9c6d4" stroke-width="3"/>
+<circle cx="370" cy="440" r="7" fill="#b9c6d4"/>
+<circle cx="430" cy="440" r="7" fill="#b9c6d4"/>
+<rect x="60" y="120" width="680" height="150" rx="6" fill="#dfe6ee" stroke="#b9c6d4" stroke-width="3"/>
+<rect x="320" y="150" width="160" height="90" rx="4" fill="#f1efe9"/>
+<text x="400" y="80" font-family="Georgia,serif" font-size="34" fill="#b9c6d4" text-anchor="middle">Built-in Cabinetry</text>
+</svg>
