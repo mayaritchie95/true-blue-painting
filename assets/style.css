@@ -46,8 +46,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .site-header{position:sticky;top:0;z-index:100;background:rgba(246,245,242,.95);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:var(--maxw);margin:0 auto}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--blue-deep);font-family:var(--font-head);font-weight:600;font-size:1.15rem;line-height:1.1}
-.brand .logo{width:42px;height:42px;flex:0 0 auto}
-.brand small{display:block;font-family:var(--font-body);font-weight:500;font-size:.72rem;letter-spacing:.04em;color:var(--ink-soft);text-transform:uppercase}
+.brand .logo{height:46px;width:auto;flex:0 0 auto}
+@media (max-width:520px){.brand .logo{height:38px}}
+.brand .brand-text{display:none}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
 .nav-links a{text-decoration:none;color:var(--ink);padding:9px 12px;border-radius:7px;font-weight:500;font-size:.98rem}
 .nav-links a:hover{background:#eceef1;color:var(--blue-deep)}
