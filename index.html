@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=1792794647">
+<link rel="stylesheet" href="assets/style.css?v=1792795020">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -66,17 +66,12 @@
     <img src="assets/img/hero-main.webp" alt="A bright white kitchen refinished by True Blue Painting, with granite counters and open wood shelving">
   </div>
   <div class="hero-inner">
-    <p class="eyebrow">Owner-operated · 20+ years experience</p>
-    <h1>Cabinet painting that looks like new — without the cost of new.</h1>
-    <p class="lead">Smooth, factory-quality sprayed finishes for kitchen cabinets, bathroom vanities and built-ins — in any colour. Serving Vancouver, the North Shore, Burnaby and the Lower Mainland.</p>
-    <div class="hero-ctas">
+    <p class="eyebrow reveal" style="--d:0s">Cabinet painting &amp; refinishing</p>
+    <h1 class="reveal" style="--d:.12s">Looks like new —<br>without the cost of new.</h1>
+    <p class="lead reveal" style="--d:.26s">Smooth, factory-quality sprayed finishes in any colour, across Vancouver and the Lower Mainland.</p>
+    <div class="hero-ctas reveal" style="--d:.4s">
       <a class="btn btn-lg" href="quote.html">Get a free estimate</a>
-      <a class="btn btn-lg btn-light" href="gallery.html">See the transformations</a>
-    </div>
-    <div class="hero-trust">
-      <span>3-year warranty</span>
-      <span>Any colour, in a smooth spray finish</span>
-      <span>Free estimates</span>
+      <a class="btn btn-lg btn-light" href="gallery.html">See our work</a>
     </div>
   </div>
   <a class="hero-scroll" href="#intro" aria-label="Scroll down to learn more">
@@ -89,15 +84,15 @@
 <section id="intro">
   <div class="wrap">
     <div class="grid cols-3">
-      <div class="card">
+      <div class="card fade-in">
         <h3>A fraction of replacement cost</h3>
         <p>Refinishing your existing cabinets gives you a brand-new look for a fraction of the price of a full kitchen replacement — and far less disruption.</p>
       </div>
-      <div class="card">
+      <div class="card fade-in d1">
         <h3>Smooth, durable finishes</h3>
         <p>We spray every door and frame for a factory-smooth result — no brush marks — using tough coatings designed to stand up to daily kitchen and bathroom use.</p>
       </div>
-      <div class="card">
+      <div class="card fade-in d2">
         <h3>Done by the owners</h3>
         <p>You won't be handed off to a crew. The owners complete every project themselves, with careful prep and detailed workmanship from start to final touch-ups.</p>
       </div>
@@ -112,10 +107,10 @@
     <h2>How a cabinet makeover works</h2>
     <p style="max-width:62ch">A clear, tidy process that's planned from the first visit to the final touch-up.</p>
     <div class="steps" style="margin-top:28px">
-      <div class="step"><h3>Free estimate</h3><p>We visit or connect online, discuss your colour and finish, and give you a clear written quote — no obligation.</p></div>
-      <div class="step"><h3>Prepare</h3><p>We remove doors, drawer fronts and hardware, mask surfaces, then clean and sand every surface for a lasting bond.</p></div>
-      <div class="step"><h3>Prime & spray</h3><p>We prime, then apply smooth sprayed coats in your chosen colour for an even, professional finish.</p></div>
-      <div class="step"><h3>Reassemble & finish</h3><p>We reinstall doors and drawers, align everything, and complete final touch-ups so your kitchen is ready to enjoy.</p></div>
+      <div class="step fade-in"><h3>Free estimate</h3><p>We visit or connect online, discuss your colour and finish, and give you a clear written quote — no obligation.</p></div>
+      <div class="step fade-in d1"><h3>Prepare</h3><p>We remove doors, drawer fronts and hardware, mask surfaces, then clean and sand every surface for a lasting bond.</p></div>
+      <div class="step fade-in d2"><h3>Prime & spray</h3><p>We prime, then apply smooth sprayed coats in your chosen colour for an even, professional finish.</p></div>
+      <div class="step fade-in d3"><h3>Reassemble & finish</h3><p>We reinstall doors and drawers, align everything, and complete final touch-ups so your kitchen is ready to enjoy.</p></div>
     </div>
   </div>
 </section>
@@ -152,17 +147,17 @@
     <p class="eyebrow" style="color:var(--wood)">What customers say</p>
     <h2>Trusted across the Lower Mainland</h2>
     <div class="grid cols-3" style="margin-top:28px">
-      <div class="review">
+      <div class="review fade-in">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>"Our kitchen looks completely new. The spray finish is flawless and you'd never know the cabinets are the original ones."</p>
         <cite>— Homeowner, North Vancouver</cite>
       </div>
-      <div class="review">
+      <div class="review fade-in d1">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>"Okko was tidy, punctual and clearly takes pride in the work. The prep was meticulous and the result speaks for itself."</p>
         <cite>— Homeowner, Burnaby</cite>
       </div>
-      <div class="review">
+      <div class="review fade-in d2">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p>"Great communication from estimate to final touch-ups. A fraction of what new cabinets would have cost us."</p>
         <cite>— Homeowner, Vancouver</cite>
@@ -228,6 +223,6 @@
 </footer>
 
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-<script src="assets/script.js?v=1792794647"></script>
+<script src="assets/script.js?v=1792795020"></script>
 </body>
 </html>
