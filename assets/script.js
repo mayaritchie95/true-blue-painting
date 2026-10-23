@@ -45,8 +45,7 @@
       'Name: '+(d.get('name')||'')+'\n'+
       'Email: '+(d.get('email')||'')+'\n'+
       'Phone: '+(d.get('phone')||'')+'\n'+
-      'Address / service area: '+(d.get('address')||'')+'\n'+
-      'Project type: '+(d.get('project')||'')+'\n\n'+
+      'Address / service area: '+(d.get('address')||'')+'\n\n'+
       'Project details:\n'+(d.get('details')||'');
     var mail='mailto:okko.trueblueptg@gmail.com?subject='+
       encodeURIComponent('Website quote request — '+(d.get('name')||''))+
