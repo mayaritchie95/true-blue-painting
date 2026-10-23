@@ -14,7 +14,9 @@
   --ok:#1f7a4d;
   --maxw:1140px;
   --header-h:72px;
-  --radius:10px;
+  --radius:18px;      /* cards, forms, images (medium) */
+  --radius-sm:12px;   /* buttons, inputs, nav items, chips (small) */
+  --radius-lg:24px;   /* hero image, feature blocks (large) */
   --shadow:0 6px 24px rgba(18,48,79,.10);
   --font-head:"Playfair Display",Georgia,"Times New Roman",serif;
   --font-body:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
@@ -40,12 +42,12 @@ img{max-width:100%;height:auto;display:block}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
 /* Skip link */
-.skip{position:absolute;left:8px;top:-48px;background:var(--blue-deep);color:#fff;padding:10px 16px;border-radius:6px;z-index:200;transition:top .15s}
+.skip{position:absolute;left:8px;top:-48px;background:var(--blue-deep);color:#fff;padding:10px 16px;border-radius:var(--radius-sm);z-index:200;transition:top .15s}
 .skip:focus{top:8px}
 
 /* Focus visibility */
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{
-  outline:3px solid var(--blue-deep);outline-offset:2px;border-radius:4px;
+  outline:3px solid var(--blue-deep);outline-offset:2px;border-radius:8px;
   box-shadow:0 0 0 5px rgba(92,178,215,.45)
 }
 /* On dark bands, use a light focus ring so it stays visible */
@@ -66,17 +68,17 @@ body.has-hero .site-header.stuck{position:fixed;top:0;bottom:auto;border-top:non
 @media (prefers-reduced-motion:reduce){body.has-hero .site-header.stuck{animation:none}}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:var(--maxw);margin:0 auto}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--blue-deep);font-family:var(--font-head);font-weight:600;font-size:1.15rem;line-height:1.1}
-.brand .logo{height:44px;width:auto;flex:0 0 auto;background:#fff;padding:5px 9px;border-radius:8px}
+.brand .logo{height:44px;width:auto;flex:0 0 auto;background:#fff;padding:5px 9px;border-radius:var(--radius-sm)}
 @media (max-width:520px){.brand .logo{height:36px}}
 .brand .brand-text{display:none}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
-.nav-links a{text-decoration:none;color:#eaf1f8;padding:9px 12px;border-radius:7px;font-weight:500;font-size:.98rem;letter-spacing:.01em}
+.nav-links a{text-decoration:none;color:#eaf1f8;padding:9px 12px;border-radius:var(--radius-sm);font-weight:500;font-size:.98rem;letter-spacing:.01em}
 .nav-links a:hover{background:rgba(255,255,255,.14);color:#fff}
 .nav-links a[aria-current="page"]:not(.nav-cta){color:#fff;background:rgba(255,255,255,.18)}
 .nav-cta[aria-current="page"]{color:#fff!important;background:var(--blue-btn)!important}
-.nav-cta{background:var(--blue-btn);color:#fff!important;padding:10px 16px!important;border-radius:8px;font-weight:600!important}
+.nav-cta{background:var(--blue-btn);color:#fff!important;padding:10px 16px!important;border-radius:var(--radius-sm);font-weight:600!important}
 .nav-cta:hover{background:var(--blue-dark)}
-.nav-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:8px 10px;cursor:pointer}
+.nav-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);border-radius:var(--radius-sm);padding:8px 10px;cursor:pointer}
 .nav-toggle span{display:block;width:22px;height:2px;background:#fff;margin:4px 0}
 @media (max-width:860px){
   .nav-toggle{display:block}
@@ -91,7 +93,7 @@ body.has-hero .site-header.stuck{position:fixed;top:0;bottom:auto;border-top:non
 }
 
 /* ===== Buttons ===== */
-.btn{display:inline-block;background:var(--blue-btn);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:9px;border:none;cursor:pointer;font-size:1rem;transition:background .15s,transform .05s}
+.btn{display:inline-block;background:var(--blue-btn);color:#fff;text-decoration:none;font-weight:600;padding:14px 26px;border-radius:var(--radius-sm);border:none;cursor:pointer;font-size:1rem;transition:background .15s,transform .05s}
 .btn:hover{background:var(--blue-dark)}
 .btn:active{transform:translateY(1px)}
 .btn-lg{padding:16px 32px;font-size:1.08rem}
@@ -144,7 +146,7 @@ section{padding:72px 0}
 @media (max-width:600px){.hero{min-height:88vh;min-height:88svh;padding-top:calc(var(--header-h) + 56px)}.hero .lead{font-size:1.08rem}}
 
 /* ===== Before/After slider ===== */
-.ba{position:relative;width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);user-select:none;background:#dfe4ea}
+.ba{position:relative;width:100%;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);user-select:none;background:#dfe4ea}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ba .after-img{clip-path:inset(0 0 0 50%)}
 .ba-label{position:absolute;bottom:12px;padding:5px 11px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.03em;color:#fff;background:rgba(18,48,79,.82)}
@@ -205,11 +207,11 @@ section{padding:72px 0}
 .areas li::before{content:"›";color:var(--wood);font-weight:700;margin-right:8px}
 
 /* ===== Forms ===== */
-.form{background:#fff;border:1px solid var(--border);border-radius:14px;padding:30px;box-shadow:var(--shadow)}
+.form{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
 .field{margin-bottom:18px}
 .field label{display:block;font-weight:600;margin-bottom:6px;color:var(--blue-deep)}
 .field .req{color:#b3261e}
-.field input,.field textarea,.field select{width:100%;padding:12px 14px;border:1px solid #c6ced8;border-radius:8px;font:inherit;background:#fff;color:var(--ink)}
+.field input,.field textarea,.field select{width:100%;padding:12px 14px;border:1px solid #c6ced8;border-radius:var(--radius-sm);font:inherit;background:#fff;color:var(--ink)}
 .field input:focus,.field textarea:focus{border-color:var(--blue)}
 .field textarea{min-height:130px;resize:vertical}
 .field .hint{font-size:.85rem;color:var(--ink-soft);margin-top:4px}
