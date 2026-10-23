@@ -80,15 +80,22 @@
   }
 })();
 
-// Transparent header -> solid on scroll (only on pages with a full-screen hero)
+// Hero pages: bottom nav bar detaches to a sticky TOP bar once scrolled past the hero
 (function(){
   if(!document.body.classList.contains('has-hero'))return;
   var header=document.querySelector('.site-header');
-  if(!header)return;
+  var hero=document.querySelector('.hero');
+  if(!header||!hero)return;
+  function headerH(){
+    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h'))||72;
+  }
   function onScroll(){
-    if(window.scrollY>40){header.classList.add('scrolled');}
-    else{header.classList.remove('scrolled');}
+    // Stick to top once the bottom of the hero (minus the bar height) passes the top of the viewport
+    var trigger=hero.offsetHeight-headerH();
+    if(window.scrollY>=trigger){header.classList.add('stuck');}
+    else{header.classList.remove('stuck');}
   }
   onScroll();
   window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
 })();
