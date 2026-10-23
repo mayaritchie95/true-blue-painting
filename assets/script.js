@@ -109,6 +109,13 @@
     entries.forEach(function(en){
       if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
     });
-  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  },{threshold:.08,rootMargin:'0px 0px -5% 0px'});
   els.forEach(function(e){io.observe(e);});
+  // Reveal anything already within the viewport on load (so nothing starts invisible above the fold)
+  requestAnimationFrame(function(){
+    els.forEach(function(e){
+      var r=e.getBoundingClientRect();
+      if(r.top<window.innerHeight&&r.bottom>0){e.classList.add('in');io.unobserve(e);}
+    });
+  });
 })();

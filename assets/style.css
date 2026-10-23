@@ -265,3 +265,44 @@ fieldset{border:none;margin:0;padding:0}
 .fade-in.d2{transition-delay:.16s}
 .fade-in.d3{transition-delay:.24s}
 @media (prefers-reduced-motion:reduce){.fade-in{opacity:1;transform:none;transition:none}}
+
+/* ===== Open, boxless layouts (replacing repetitive cards) ===== */
+/* Feature columns — no border, no box, just content + whitespace */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+@media (max-width:760px){.features{grid-template-columns:1fr;gap:36px}}
+.feature{position:relative;padding-top:22px}
+.feature::before{content:"";position:absolute;top:0;left:0;width:40px;height:3px;background:var(--blue);border-radius:2px}
+.feature h3{margin:0 0 .5rem;font-size:1.3rem}
+.feature p{margin:0;color:var(--ink-soft)}
+.band .feature h3{color:#fff}
+.band .feature p{color:#cdddec}
+.band .feature::before{background:var(--sky)}
+
+/* Process flow — big numbers, no boxes */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:40px;counter-reset:fstep}
+@media (max-width:760px){.flow{grid-template-columns:1fr 1fr;gap:32px}}
+@media (max-width:460px){.flow{grid-template-columns:1fr}}
+.flow-step{counter-increment:fstep}
+.flow-step .n{font-family:var(--font-head);font-size:2.6rem;line-height:1;color:var(--sky);opacity:.9;margin-bottom:.4rem;display:block}
+.flow-step h3{margin:0 0 .4rem;font-size:1.15rem;color:#fff}
+.flow-step p{margin:0;font-size:.97rem;color:#cdddec}
+
+/* Quotes — open testimonial style, no heavy box */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:36px}
+@media (max-width:760px){.quotes{grid-template-columns:1fr;gap:32px}}
+.quote{position:relative;padding-left:0}
+.quote .stars{color:#ffce54;letter-spacing:3px;margin-bottom:12px;font-size:1.05rem}
+.quote p{font-style:italic;font-size:1.08rem;line-height:1.6;color:#fff;margin:0 0 14px}
+.quote cite{font-style:normal;font-weight:600;color:var(--sky)}
+
+/* Plain contact rows — no boxes */
+.contact-rows{display:flex;flex-direction:column;gap:2px;margin-top:20px}
+.contact-rows a,.contact-rows div{display:block;padding:14px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--ink)}
+.contact-rows a:last-child,.contact-rows div:last-child{border-bottom:none}
+.contact-rows b{display:block;color:var(--blue-deep);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.contact-rows a:hover b{color:var(--blue)}
+
+/* Contact rows on dark bands */
+.band .contact-rows a,.band .contact-rows div{color:#eaf1f8;border-bottom-color:rgba(255,255,255,.18)}
+.band .contact-rows b{color:#fff}
+.band .contact-rows a:hover b{color:var(--sky)}
