@@ -79,3 +79,16 @@
     firstEmpty.focus({preventScroll:true});
   }
 })();
+
+// Transparent header -> solid on scroll (only on pages with a full-screen hero)
+(function(){
+  if(!document.body.classList.contains('has-hero'))return;
+  var header=document.querySelector('.site-header');
+  if(!header)return;
+  function onScroll(){
+    if(window.scrollY>40){header.classList.add('scrolled');}
+    else{header.classList.remove('scrolled');}
+  }
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+})();
