@@ -185,11 +185,12 @@ section{padding:72px 0}
 .band-wood{background:linear-gradient(120deg,var(--blue-deep),var(--blue-dark))}
 
 /* ===== Gallery ===== */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
 @media (max-width:860px){.gallery{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.gallery{grid-template-columns:1fr}}
-.gallery figure{margin:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:#fff}
-.gallery figcaption{padding:10px 14px;font-size:.9rem;color:var(--ink-soft)}
+.gallery figure{margin:0;border-radius:var(--radius);overflow:hidden;background:#fff;display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(18,48,79,.07)}
+.gallery figure img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.gallery figcaption{padding:14px 16px;font-size:.95rem;color:var(--blue-deep);font-weight:500}
 
 /* ===== Reviews ===== */
 .review{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px}
