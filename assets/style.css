@@ -61,7 +61,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 body:not(.has-hero) main{padding-top:0}
 
 /* Hero pages: bar sits at the BOTTOM of the hero (solid blue, full width) */
-body.has-hero .site-header{position:absolute;top:calc(100svh - var(--header-h));bottom:auto;background:var(--blue-deep);border-bottom:none;border-top:1px solid #0e2b52;box-shadow:0 -2px 16px rgba(0,0,0,.18)}
+body.has-hero .site-header{position:absolute;top:var(--hero-bar-top,calc(100svh - var(--header-h)));bottom:auto;background:var(--blue-deep);border-bottom:none;border-top:1px solid #0e2b52;box-shadow:0 -2px 16px rgba(0,0,0,.18)}
 /* Once scrolled past the hero, JS adds .stuck -> fixed solid bar at top */
 body.has-hero .site-header.stuck{position:fixed;top:0;bottom:auto;border-top:none;border-bottom:1px solid #0e2b52;box-shadow:0 2px 16px rgba(0,0,0,.18);animation:headerDrop .3s ease}
 @keyframes headerDrop{from{transform:translateY(-100%)}to{transform:translateY(0)}}

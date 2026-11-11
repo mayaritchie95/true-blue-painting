@@ -80,24 +80,32 @@
   }
 })();
 
-// Hero pages: bottom nav bar detaches to a sticky TOP bar once scrolled past the hero
+// Hero pages: bottom nav bar sits at the bottom of the hero, then detaches to a sticky TOP bar on scroll
 (function(){
   if(!document.body.classList.contains('has-hero'))return;
   var header=document.querySelector('.site-header');
   var hero=document.querySelector('.hero');
   if(!header||!hero)return;
   function headerH(){
-    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h'))||72;
+    // Use the bar's real rendered height (falls back to the CSS var)
+    return header.offsetHeight || parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+  }
+  // Pin the bar to the hero's actual bottom (works whether the hero is full-screen or shorter)
+  function placeBar(){
+    var top=Math.max(0, hero.offsetHeight-headerH());
+    document.documentElement.style.setProperty('--hero-bar-top', top+'px');
   }
   function onScroll(){
-    // Stick to top once the bottom of the hero (minus the bar height) passes the top of the viewport
     var trigger=hero.offsetHeight-headerH();
     if(window.scrollY>=trigger){header.classList.add('stuck');}
     else{header.classList.remove('stuck');}
   }
+  placeBar();
   onScroll();
+  // Re-measure once the hero image/fonts settle, and on resize
+  window.addEventListener('load',function(){placeBar();onScroll();});
+  window.addEventListener('resize',function(){placeBar();onScroll();},{passive:true});
   window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll,{passive:true});
 })();
 
 // Scroll-reveal: fade elements in as they enter the viewport
