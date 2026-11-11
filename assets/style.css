@@ -148,7 +148,7 @@ section{padding:72px 0}
 @media (prefers-reduced-motion:reduce){.hero-scroll .chev{animation:none}}
 @media (max-width:600px){
   /* Shorter, more compact hero on mobile so it all fits and more of the wide photo shows */
-  .hero{min-height:0;flex-direction:column;padding-top:calc(var(--header-h) + 28px);padding-bottom:40px}
+  .hero{min-height:0;flex-direction:column;padding-top:calc(var(--header-h) + 28px);padding-bottom:64px}
   .hero-inner{width:100%}
   /* Smaller, tighter brand lockup */
   .hero-brand .brand-name{font-size:clamp(2.3rem,10.5vw,3.2rem)}
@@ -159,8 +159,8 @@ section{padding:72px 0}
   /* Compact, auto-width buttons */
   .hero-ctas{gap:10px;flex-direction:column;align-items:center;margin-bottom:.2rem}
   .hero-ctas .btn-lg{padding:12px 26px;font-size:.98rem;width:auto;min-width:210px}
-  /* Scroll cue flows below buttons, compact, well clear of the nav bar */
-  .hero-scroll{position:static;transform:none;left:auto;bottom:auto;margin:1rem auto 0;width:100%}
+  /* Scroll cue flows below buttons; extra bottom margin lifts it clear of the bar zone */
+  .hero-scroll{position:static;transform:none;left:auto;bottom:auto;margin:1rem auto calc(var(--header-h) + 16px);width:100%}
   .hero-scroll .chev{width:16px;height:16px}
 }
 
