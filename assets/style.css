@@ -25,6 +25,8 @@
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 html,body{overflow-x:hidden;max-width:100%}
+/* Dark page backdrop so overscroll at the bottom shows the footer blue (not a light gap) */
+html{background:#0e2740}
 body{
   margin:0;font-family:var(--font-body);color:var(--ink);
   background:var(--paper);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;
