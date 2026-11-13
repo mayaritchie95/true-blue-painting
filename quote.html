@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=1794510117">
+<link rel="stylesheet" href="assets/style.css?v=1794597795">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -48,7 +48,7 @@
     </div>
 
     <div>
-      <form class="form" id="quote-form" novalidate>
+      <form class="form" id="quote-form" action="https://formspree.io/f/xkjrgzgw" method="POST" novalidate>
         <h2 style="margin-top:0;font-size:1.4rem">Request a free estimate</h2>
         <p role="status" id="form-status" tabindex="-1" hidden style="background:#e7f3ec;border:1px solid #bfe0cd;color:#13532f;padding:12px 14px;border-radius:8px"></p>
         <p style="font-size:.88rem;color:var(--ink-soft);margin-top:-6px">Fields marked <span class="req" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
@@ -78,6 +78,8 @@
           <textarea id="details" aria-required="true" name="details" required placeholder="e.g. Approx. 20 kitchen doors and drawers, currently oak, we'd like a soft white. Hoping to complete before the holidays."></textarea>
           <span class="hint">Colour ideas, approximate number of doors, and your timeline all help us quote accurately.</span>
         </div>
+        <input type="hidden" name="_subject" value="New quote request — True Blue Painting website">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
         <button class="btn btn-lg" type="submit" style="width:100%">Send my request</button>
         <p class="hint" style="margin-top:12px">By submitting, you agree to our <a href="privacy-policy.html">Privacy Policy</a>. We'll only use your details to respond to your enquiry.</p>
       </form>
@@ -99,6 +101,6 @@
   <div class="wrap footer-bottom"><span>© <span id="year">2025</span> True Blue Painting &amp; Cabinet Refinishing. All rights reserved.</span><span>North Vancouver, BC · Serving the Lower Mainland</span><a class="pagepros-credit" href="https://pagepros.io/" target="_blank" rel="noopener">Website Built &amp; Designed by <img src="assets/img/pagepros-logo.png" alt="Page Pros"></a></div>
 </footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-<script src="assets/script.js?v=1794510117"></script>
+<script src="assets/script.js?v=1794597795"></script>
 </body>
 </html>

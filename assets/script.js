@@ -30,32 +30,46 @@
   });
 })();
 
-// Simple contact-form validation + mailto fallback (no backend on static host)
+// Contact form -> Formspree (AJAX so the visitor stays on the page)
 (function(){
   var form=document.getElementById('quote-form');
   if(!form)return;
+  var status=document.getElementById('form-status');
+  function showStatus(msg,ok){
+    if(!status)return;
+    status.hidden=false;
+    status.textContent=msg;
+    status.style.background = ok ? '#e7f3ec' : '#fdecea';
+    status.style.borderColor = ok ? '#bfe0cd' : '#f5b5ae';
+    status.style.color = ok ? '#13532f' : '#8a1c13';
+    status.focus();
+  }
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var status=document.getElementById('form-status');
-    if(!form.checkValidity()){
-      form.reportValidity();return;
-    }
-    var d=new FormData(form);
-    var body=
-      'Name: '+(d.get('name')||'')+'\n'+
-      'Email: '+(d.get('email')||'')+'\n'+
-      'Phone: '+(d.get('phone')||'')+'\n'+
-      'Address / service area: '+(d.get('address')||'')+'\n\n'+
-      'Project details:\n'+(d.get('details')||'');
-    var mail='mailto:okko.trueblueptg@gmail.com?subject='+
-      encodeURIComponent('Website quote request — '+(d.get('name')||''))+
-      '&body='+encodeURIComponent(body);
-    if(status){
-      status.hidden=false;
-      status.textContent='Opening your email app to send this request to True Blue Painting. If nothing opens, email okko.trueblueptg@gmail.com or call 604-440-3020.';
-      status.focus();
-    }
-    window.location.href=mail;
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    var btn=form.querySelector('button[type="submit"]');
+    var original=btn?btn.textContent:'';
+    if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
+    var data=new FormData(form);
+    fetch(form.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
+      .then(function(res){
+        if(res.ok){
+          form.reset();
+          showStatus("Thanks! Your request has been sent — we'll get back to you as soon as possible. Prefer to talk? Call 604-440-3020.",true);
+        } else {
+          res.json().then(function(j){
+            var msg=(j && j.errors && j.errors.length) ? j.errors.map(function(x){return x.message;}).join(', ')
+              : "Sorry, something went wrong sending your request. Please email okko.trueblueptg@gmail.com or call 604-440-3020.";
+            showStatus(msg,false);
+          }).catch(function(){
+            showStatus("Sorry, something went wrong. Please email okko.trueblueptg@gmail.com or call 604-440-3020.",false);
+          });
+        }
+      })
+      .catch(function(){
+        showStatus("We couldn't reach the server. Please check your connection, or email okko.trueblueptg@gmail.com / call 604-440-3020.",false);
+      })
+      .finally(function(){ if(btn){ btn.disabled=false; btn.textContent=original; } });
   });
 })();
 
